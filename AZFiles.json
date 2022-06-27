@@ -1,0 +1,13 @@
+{
+    "SubscriptionId": "655dabc5-b64e-475c-a455-28f571ea6186",
+    "ResourceGroupName": "AVD-Infra",
+    "StorageAccountName": "stojmocspavdaeudtadtl001",
+    "ShareName": "userprifile01",
+    "DomainAccountType": "ComputerAccount",
+    "OU": "OU=WVD,OU=Intechxsp,DC=intechxsp,DC=local",
+    "FSContributorGroups": [{"name":"sg-wvd"},
+    "FSAdminUsers": [{"name":"jmorales@intechxsp.com"}],
+    "DownloadUrl": "https://github.com/Azure-Samples/azure-files-samples/releases/download/v0.2.4/AzFilesHybrid.zip",
+    "ModulePath": "C://temp//AzFilesHybrid",
+    "DriveLetter": "X"
+}
