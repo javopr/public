@@ -638,6 +638,8 @@ ValidateStorageAccountNameCharacterCount
 # ============================================================================
 $OutFile = $ModulePath + "\" + ($DownloadUrl | Split-Path -Leaf)
 
+Install-PackageProvider -name NuGet -force -confirm:$false
+
 Import-Module -Name "PowerShellGet" -Force
 $PowerShellGet = (Get-Module -Name "PowerShellGet")
 if ($null -ne $PowerShellGet) {
