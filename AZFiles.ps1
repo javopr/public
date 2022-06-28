@@ -666,7 +666,7 @@ if ($null -ne $PowerShellGet) {
 else {
     try {
         Write-Log -Message "PowerShellGet is not installed. Attempting Install" -Level Info
-        Install-Module -Name "PowerShellGet" -AllowClobber -force -ErrorAction Stop -confirm:$false -force
+        Install-Module -Name "PowerShellGet" -AllowClobber -force -ErrorAction Stop -confirm:$false 
         Import-Module -Name "PowerShellGet" -Force -ErrorAction Stop
     }
     catch {
@@ -678,25 +678,25 @@ else {
 }
 
 
-$AZModule1 = (Get-Module -Name "AZ")
-if ($null -ne $AZModule1) {
-    Write-Log -Message "AZ version $($Az.Version) is installed" -Level Info
-    Import-Module -Name "AZ" -Force
-}
-else {
-    try {
-        Write-Log -Message "AZ is not installed. Attempting Install" -Level Info
-        Install-Module -Name "AZ" -AllowClobber -ErrorAction Stop -Confirm:$false -force
-        Import-Module -Name "AZ" -Force
-		Write-Log -Message "AZ Module installed" -Level Info
-    }
-    catch {
-        Write-Log -Message "Failed to Import Module AZ.Storage. Exiting" -Level Warn
-        Write-Log -Message $_ -Level Warn
-        StopIteration
-        Exit 1
-    }    
-}
+# $AZModule1 = (Get-Module -Name "AZ")
+# if ($null -ne $AZModule1) {
+    # Write-Log -Message "AZ version $($Az.Version) is installed" -Level Info
+    # Import-Module -Name "AZ" -Force
+# }
+# else {
+    # try {
+        # Write-Log -Message "AZ is not installed. Attempting Install" -Level Info
+        # Install-Module -Name "AZ" -AllowClobber -ErrorAction Stop -Confirm:$false -force
+        # Import-Module -Name "AZ" -Force
+		# Write-Log -Message "AZ Module installed" -Level Info
+    # }
+    # catch {
+        # Write-Log -Message "Failed to Import Module AZ.Storage. Exiting" -Level Warn
+        # Write-Log -Message $_ -Level Warn
+        # StopIteration
+        # Exit 1
+    # }    
+# }
 
 
 $AzureADModule = (Get-Module -Name "AzureAd")
