@@ -771,17 +771,20 @@ else {
         $null = New-Item -Path $ModulePath -ItemType Directory
     }
     try {
-        Write-Log -Message "Downloading AZFilesHybrid PowerShell Module" -Level Info
+        Write-Log -Message "Setting parameters to download AZFilesHybrid PowerShell Module" -Level Info
         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        Write-Log -Message "Downloading AZFilesHybrid PowerShell Module" -Level Info
         Invoke-WebRequest -Uri $DownloadUrl -OutFile $OutFile -ErrorAction Stop
+        Write-Log -Message "AZFilesHybrid PowerShell Module Downloaded.  Expanding File" -Level Info
         Expand-Archive -Path $OutFile -DestinationPath $ModulePath -Force
+        Write-Log -Message "AZFilesHybrid file Expanded" -Level Info
         # Navigate to where AzFilesHybrid is unzipped and stored and run to copy the files into your path
-        Push-Location $ModulePath\AZFilesHybrid
+        Push-Location $ModulePath
         .\CopyToPSPath.ps1 -Confirm:$false
         #Import AzFilesHybrid module
-		Write-Log -Message "Importing AZFilesHybrid PowerShell Module" -Level Info
+	Write-Log -Message "Importing AZFilesHybrid PowerShell Module" -Level Info
         Import-Module -Name "AZFilesHybrid" -Force  -ErrorAction Stop 
-		Write-Log -Message " AZFilesHybrid PowerShell Module imported" -Level Info
+	Write-Log -Message " AZFilesHybrid PowerShell Module imported" -Level Info
     }
     catch {
         Write-Log -Message "Failed to Download AzFilesHybrid Module. Exiting" -Level Warn
