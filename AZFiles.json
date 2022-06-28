@@ -1,13 +1,16 @@
 {
+    "TenantID": "29b7d677-91c4-4717-abb3-224400c8bf44",
     "SubscriptionId": "655dabc5-b64e-475c-a455-28f571ea6186",
+	"AppId": "058da680-816f-4a5d-8c5b-25ae10bc9067",
+	"AppSecret": "LVf8Q~jW6jk3BlpfYLzKnZI4fqdWj3f0OyBJkcdv",
     "ResourceGroupName": "AVD-Infra",
     "StorageAccountName": "stojmocspavdaeudtadtl001",
     "ShareName": "userprifile01",
     "DomainAccountType": "ComputerAccount",
     "OU": "OU=WVD,OU=Intechxsp,DC=intechxsp,DC=local",
-    "FSContributorGroups": [{"name":"sg-wvd"},
+    "FSContributorGroups": [{"name":"AVD-Users"},{"name":"sg-wvd"},{"name":"AVD-Admin"}],
     "FSAdminUsers": [{"name":"jmorales@intechxsp.com"}],
     "DownloadUrl": "https://github.com/Azure-Samples/azure-files-samples/releases/download/v0.2.4/AzFilesHybrid.zip",
-    "ModulePath": "C://temp//AzFilesHybrid",
+    "ModulePath": "C://temp//",
     "DriveLetter": "X"
 }
